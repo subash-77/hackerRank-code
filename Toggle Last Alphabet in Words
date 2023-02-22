@@ -1,0 +1,68 @@
+The program must accept a string S containing only alphabets and space and toggle the case of the last alphabet in each word.
+
+Input Format
+
+string
+
+Constraints
+
+-
+
+Output Format
+
+string
+
+Sample Input 0
+
+Did you havE tea
+Sample Output 0
+
+DiD yoU have teA
+Sample Input 1
+
+ CoulD yoU help me ouT
+Sample Output 1
+
+ Could you helP mE out
+ 
+ CODE:
+ 
+ import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        String string=sc.nextLine();
+        char index0=string.charAt(0);
+        if(index0==' ')
+        {
+            System.out.print(" ");
+        }
+        String s=string.trim();
+        String str[]=s.split(" ");
+        for(int i=0;i<str.length;i++)
+        {
+            String s1=str[i];
+            int len=s1.length()-1;
+            for(int j=0;j<len;j++)
+            {
+                System.out.print(s1.charAt(j));
+            }
+            char ch=s1.charAt(len);
+            if(Character.isUpperCase(ch))
+            {
+                char d=Character.toLowerCase(ch);
+                System.out.print(d);
+            }
+            if(Character.isLowerCase(ch))
+            {
+                char d=Character.toUpperCase(ch);
+                System.out.print(d);
+            }
+            System.out.print(" ");
+        }
+    }
+}
